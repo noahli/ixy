@@ -3,7 +3,7 @@ project(ixy C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_compile_options(-g -O2 -march=native -fomit-frame-pointer -std=c11
+add_compile_options(-g -O0 -march=native -fomit-frame-pointer -std=c11
 	-D_XOPEN_SOURCE=700
 	-D_DEFAULT_SOURCE
 	-Wall

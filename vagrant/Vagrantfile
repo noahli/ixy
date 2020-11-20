@@ -32,11 +32,11 @@ Ixy is installed in ~/ixy, run with sudo, e.g.
 		end
 		config.vm.provision "shell", privileged: true, inline: %Q{
 			DEBIAN_FRONTEND=noninteractive apt-get update
-			DEBIAN_FRONTEND=noninteractive apt-get install -y git cmake build-essential pciutils vim
-			sudo -u vagrant git clone https://github.com/emmericp/ixy /home/vagrant/ixy
+			DEBIAN_FRONTEND=noninteractive apt-get install -y git cmake build-essential pciutils vim gdb tcpdump lrzsz
+			sudo -u vagrant git clone https://github.com/noahli/ixy.git /home/vagrant/ixy
 			cd /home/vagrant/ixy
 			if dmidecode -t 0 | grep VirtualBox ; then
-				git checkout virtualbox-workarounds
+				git checkout ci-fix-vbox
 			fi
 			sudo -u vagrant cmake .
 			sudo -u vagrant make
@@ -61,11 +61,11 @@ Ixy is installed in ~/ixy, run with sudo, e.g.
 		end
 		config.vm.provision "shell", privileged: true, inline: %Q{
 			DEBIAN_FRONTEND=noninteractive apt-get update
-			DEBIAN_FRONTEND=noninteractive apt-get install -y git cmake build-essential pciutils vim
-			sudo -u vagrant git clone https://github.com/emmericp/ixy /home/vagrant/ixy
+			DEBIAN_FRONTEND=noninteractive apt-get install -y git cmake build-essential pciutils vim gdb tcpdump lrzsz
+			sudo -u vagrant git clone https://github.com/noahli/ixy.git /home/vagrant/ixy
 			cd /home/vagrant/ixy
 			if dmidecode -t 0 | grep VirtualBox ; then
-				git checkout virtualbox-workarounds
+				git checkout ci-fix-vbox
 			fi
 			sudo -u vagrant cmake .
 			sudo -u vagrant make
